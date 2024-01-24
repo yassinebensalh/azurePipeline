@@ -58,6 +58,10 @@
 
     </dependencies>
          
+          <profiles>
+        <profile>
+                    <repositories>
+
 <repository>
   <id>ybensalha</id>
   <url>https://pkgs.dev.azure.com/ybensalha/_packaging/ybensalha/maven/v1</url>
@@ -68,7 +72,12 @@
     <enabled>true</enabled>
   </snapshots>
 </repository>
-         
+            </repositories>
+
+              </profile>
+    </profiles>
+
+
     <build>
         <plugins>
         <plugin>
