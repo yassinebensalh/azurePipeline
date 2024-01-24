@@ -58,23 +58,23 @@
 
     </dependencies>
          
-          <profiles>
+    <profiles>
         <profile>
-                    <repositories>
+            <repositories>
 
-<repository>
-  <id>ybensalha</id>
-  <url>https://pkgs.dev.azure.com/ybensalha/_packaging/ybensalha/maven/v1</url>
-  <releases>
-    <enabled>true</enabled>
-  </releases>
-  <snapshots>
-    <enabled>true</enabled>
-  </snapshots>
-</repository>
+                    <repository>
+                        <id>ybensalha</id>
+                        <url>https://pkgs.dev.azure.com/ybensalha/_packaging/ybensalha/maven/v1</url>
+                        <releases>
+                            <enabled>true</enabled>
+                        </releases>
+                        <snapshots>
+                            <enabled>true</enabled>
+                        </snapshots>
+                    </repository>
             </repositories>
 
-              </profile>
+        </profile>
     </profiles>
 
 
