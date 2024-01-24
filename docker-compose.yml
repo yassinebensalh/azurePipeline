@@ -1,0 +1,39 @@
+version: "3.8"
+
+services:
+  mysqldb:
+    container_name: mysqldb
+    image: mysql:8
+    restart: unless-stopped
+    environment:
+      - MYSQL_ROOT_PASSWORD=
+      - MYSQL_DATABASE=stationSki
+    networks:
+      - springapimysql-net  
+    ports:
+      - 3306:3306
+    volumes:
+      - db:/var/lib/mysql
+  app:
+    container_name: app
+    depends_on:
+      - mysqldb
+    build: .
+      #context: ./
+      #dockerfile: Dockerfile
+    restart: on-failure
+    networks:
+      - springapimysql-net
+    ports:
+      - 8089:8089
+    volumes:
+      - .m2:/root/.m2
+    stdin_open: true
+    tty: true
+
+volumes:
+  db:
+
+networks:
+  springapimysql-net:
+    driver: bridge
