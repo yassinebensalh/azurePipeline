@@ -17,8 +17,10 @@ stages:
     displayName: Build Maven Project
     steps:
     - task: Maven@3
-      #env:
+      env:
       #  JAVA_HOME: /Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
+        M2_HOME: C:\maven\apache-maven-3.9.6
+
       displayName: 'Maven Package'
       inputs:
         mavenPomFile: 'pom.xml'
