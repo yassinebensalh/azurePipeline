@@ -58,9 +58,8 @@
 
     </dependencies>
          
-    <profiles>
-        <profile>
-            <repositories>
+<distributionManagement>
+
 
                     <repository>
                         <id>ybensalha</id>
@@ -72,10 +71,8 @@
                             <enabled>true</enabled>
                         </snapshots>
                     </repository>
-            </repositories>
+  </distributionManagement>
 
-        </profile>
-    </profiles>
 
 
     <build>
