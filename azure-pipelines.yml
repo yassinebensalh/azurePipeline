@@ -68,7 +68,7 @@ stages:
       - agent.name -equals ubuntu
   displayName: run Container stage
   jobs:  
-  - job: Docker Compose run
+  - job: Docker
     displayName: run Container stage
     steps:
     - task: DownloadPipelineArtifact@2
