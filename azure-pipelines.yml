@@ -13,7 +13,7 @@ stages:
 - stage: Build
   pool: default
     demands:
-      - Agent.Name -equals LAPTOP-BENSALAH
+      - agent.name -equals LAPTOP-BENSALAH
   displayName: Build stage
   jobs:  
   - job: Build
