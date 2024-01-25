@@ -82,3 +82,12 @@ stages:
         displayName: download Dockerfile
         artifact: 'Dockefile'
         path: $(System.DefaultWorkingDirectory)/
+
+    - task: DockerCompose@0
+      displayName: Run a Docker Compose command
+      inputs:
+        action: Run a Docker Compose command
+        dockerComposeFile: docker-compose.yml 
+        projectName: $(Build.Repository.Name)
+        qualifyImageNames: true
+        dockerComposeCommand: up
