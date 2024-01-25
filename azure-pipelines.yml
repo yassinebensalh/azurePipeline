@@ -60,3 +60,25 @@ stages:
       inputs:
         targetPath: $(System.DefaultWorkingDirectory)/Dockerfile
         artifactName: Dockefile
+
+- stage: Docker
+  pool:
+    name: default
+    demands:
+      - agent.name -equals ubuntu
+  displayName: run Container stage
+  jobs:  
+  - job: Docker Compose run
+    displayName: run Container stage
+    steps:
+    - task: DownloadPipelineArtifact@2
+      inputs:
+        displayName: download Docker Compose file
+        artifact: 'dockerComposeFile'
+        path: $(System.DefaultWorkingDirectory)/
+
+    - task: DownloadPipelineArtifact@2
+      inputs:
+        displayName: download Dockerfile
+        artifact: 'Dockefile'
+        path: $(System.DefaultWorkingDirectory)/
