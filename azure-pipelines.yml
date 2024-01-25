@@ -58,5 +58,5 @@ stages:
     - task: PublishPipelineArtifact@1
       displayName: upload dockerFile
       inputs:
-        targetPath: $(System.DefaultWorkingDirectory)/Dockerfile.yml
+        targetPath: $(System.DefaultWorkingDirectory)/Dockerfile
         artifactName: Dockefile
