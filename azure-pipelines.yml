@@ -6,14 +6,14 @@
 trigger:
 - main
  
-pool:
-  default
+# pool:
+#   default
 
 stages:
 - stage: Build
   pool: default
-  demands:
-    - Agent.Name -equals LAPTOP-BENSALAH
+    demands:
+      - Agent.Name -equals LAPTOP-BENSALAH
   displayName: Build stage
   jobs:  
   - job: Build
