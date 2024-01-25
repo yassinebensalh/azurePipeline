@@ -50,6 +50,13 @@ stages:
         packagePublishDescription: 'test of storing jars'
         
     - task: PublishPipelineArtifact@1
+      displayName: upload Docker Compose file
       inputs:
-        targetPath: $(System.DefaultWorkingDirectory)/**/docker-compose.yml
+        targetPath: $(System.DefaultWorkingDirectory)/docker-compose.yml
         artifactName: dockerComposeFile
+
+    - task: PublishPipelineArtifact@1
+      displayName: upload dockerFile
+      inputs:
+        targetPath: $(System.DefaultWorkingDirectory)/Dockerfile.yml
+        artifactName: Dockefile
