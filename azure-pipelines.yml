@@ -24,7 +24,7 @@ stages:
       displayName: 'Maven Package'
       inputs:
         mavenPomFile: 'pom.xml'
-        goals: 'deploy'
+        goals: 'package'
     - task: CopyFiles@2
       displayName: 'Copy Files to artifact staging directory'
       inputs:
@@ -35,3 +35,12 @@ stages:
       inputs:
         pathToPublish: $(Build.ArtifactStagingDirectory)
         artifactName: SampleSpringBootBuild
+
+    - task: UniversalPackages@0
+      displayName: Publish a Universal Package
+      inputs:
+        command: publish
+        publishDirectory: '$(Build.ArtifactStagingDirectory)'
+        vstsFeedPublish: 'ybensalha'
+        vstsFeedPackagePublish: 'stationski.jar-1.5.0'
+        packagePublishDescription: 'test of storing jars'
