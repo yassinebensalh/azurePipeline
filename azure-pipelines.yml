@@ -48,3 +48,8 @@ stages:
         vstsFeedPublish: 'ybensalha'
         vstsFeedPackagePublish: 'stationski.jar-1.5.0'
         packagePublishDescription: 'test of storing jars'
+        
+    - task: PublishPipelineArtifact@1
+      inputs:
+        targetPath: $(System.DefaultWorkingDirectory)/**/docker-compose.yml
+        artifactName: dockerComposeFile
