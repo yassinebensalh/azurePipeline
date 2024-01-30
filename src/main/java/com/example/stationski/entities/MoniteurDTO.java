@@ -2,36 +2,27 @@ package com.example.stationski.entities;
 
 import lombok.*;
 
-import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
 
-@Entity
 @Getter
 @Setter
-@NoArgsConstructor
 @Builder
+@NoArgsConstructor
+@Data
 @ToString
-@Table( name = "moniteur")
-public class Moniteur implements Serializable {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="idMoniteur")
-    private Integer idMoniteur; // Clé primaire
+public class MoniteurDTO implements Serializable {
     private Long numMoniteur;
     private String nomM;
     private String prenomM;
     private LocalDate dateRecru;
     private float prime;
 
-    public Moniteur( Integer idMoniteur,
-    Long numMoniteur,
-    String nomM,
-    String prenomM,
-    LocalDate dateRecru,
-    float prime){
-        this.idMoniteur = idMoniteur;
+    public MoniteurDTO(Long numMoniteur,
+                       String nomM,
+                       String prenomM,
+                       LocalDate dateRecru,
+                       float prime){
         this.numMoniteur = numMoniteur;
         this.nomM = nomM;
         this.prenomM = prenomM;
